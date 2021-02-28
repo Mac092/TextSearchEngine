@@ -27,11 +27,24 @@ public class FileManagement
         }
     }
  
-    public char[] StoreContentIntoCharArray(string fileName)
+    public void StoreContentIntoCharArray(string targetDirectory, ref char[][] fileContents)
     {
-        char[] fileContent = null;
-
-        return fileContent;
+        if (Directory.Exists(targetDirectory))
+        {
+            for (int i = 0; i < FilesNames.Length; i++)
+            {
+                string filePath = targetDirectory + "\\" + FilesNames[i];
+                using (StreamReader sr = new StreamReader(filePath))
+                {
+                    fileContents[i] = new char[sr.BaseStream.Length];
+                    int j = 0;
+                    while (sr.Peek() >= 0)
+                    {
+                        fileContents[i][j] += (char)sr.Read();
+                        j++;
+                    }
+                }
+            }
+        }
     }
-
 }

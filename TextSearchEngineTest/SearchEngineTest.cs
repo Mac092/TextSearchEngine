@@ -44,5 +44,17 @@ namespace TextSearchEngine.Tests
             Assert.AreNotEqual(0, searchEngine.FileManagement.NumFiles);
             Assert.AreEqual(filesNames, searchEngine.FileManagement.FilesNames);
         }
+
+        [Test]
+        public void GetTextFromFirstFile()
+        {
+            string searchWord = "dog";
+            string searchDirectory = "C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\DirectoryWithContent";
+
+            SearchEngine searchEngine = new SearchEngine();
+            searchEngine.InitializeSearchEngine(searchWord, searchDirectory);
+
+            Assert.AreEqual("dog", searchEngine.GetSpecificFileContent(0));
+        }
     }
 }
