@@ -13,7 +13,11 @@ namespace TextSearchEngine
             _searchEngine = new SearchEngine();
 
             string searchWord = _userInteraction.AskForSearch();
+            //Build
+            //_searchEngine.InitializeSearchEngine(searchWord, args[0]);
+            //Debugging
             _searchEngine.InitializeSearchEngine(searchWord, "C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\DirectoryWithContent");
+            _searchEngine.RunSearch();
         }
     }
 }

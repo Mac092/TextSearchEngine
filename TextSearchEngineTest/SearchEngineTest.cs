@@ -15,7 +15,6 @@ namespace TextSearchEngine.Tests
 
             Assert.AreEqual("dog", searchEngine.SearchWord);
             Assert.AreEqual("C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\EmptyDirectory", searchEngine.EvaluatedDirectory);
-
         }
 
         [Test]
@@ -46,7 +45,7 @@ namespace TextSearchEngine.Tests
         }
 
         [Test]
-        public void GetTextFromFirstFile()
+        public void TestTextFromFirstFile()
         {
             string searchWord = "dog";
             string searchDirectory = "C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\DirectoryWithContent";
@@ -54,7 +53,20 @@ namespace TextSearchEngine.Tests
             SearchEngine searchEngine = new SearchEngine();
             searchEngine.InitializeSearchEngine(searchWord, searchDirectory);
 
-            Assert.AreEqual("dog", searchEngine.GetSpecificFileContent(0));
+            Assert.AreEqual("dog bear dog dolphin", searchEngine.GetSpecificFileContent(0));
+        }
+
+        [Test]
+        public void TestNumOccurrencesInFirstFile()
+        {
+            string searchWord = "dog";
+            string searchDirectory = "C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\DirectoryWithContent";
+
+            SearchEngine searchEngine = new SearchEngine();
+            searchEngine.InitializeSearchEngine(searchWord, searchDirectory);
+            searchEngine.RunSearch();
+
+            Assert.AreEqual(2, searchEngine.GetOcurrencesInFiles()[0].Item2);
         }
     }
 }

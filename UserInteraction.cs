@@ -11,7 +11,7 @@ namespace TextSearchEngine
 
         public string AskForSearch()
         {
-            string searchWord = string.Empty;
+            string searchWord = Console.ReadLine();
 
             return searchWord;
         }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace TextSearchEngine
 {
@@ -12,17 +11,37 @@ namespace TextSearchEngine
         private Tuple<string, int>[] _ocurrencesInFiles;
         private char[][] _fileContents;
 
+        public Tuple<string, int>[] GetOcurrencesInFiles()
+        {
+            return _ocurrencesInFiles;
+        }
+
         public void InitializeSearchEngine(string searchWord, string searchDirectory)
         {
             FileManagement = new FileManagement();
             SearchWord = searchWord;
             EvaluatedDirectory = searchDirectory;
 
-            FileManagement.ObtainNumFilesAndFileNames(EvaluatedDirectory);
-            _ocurrencesInFiles = new Tuple<string, int>[FileManagement.NumFiles];
-            _fileContents = new char[FileManagement.NumFiles][];
+            PrepareSearchDataSource();
+        }
 
-            FileManagement.StoreContentIntoCharArray(EvaluatedDirectory, ref _fileContents);
+        public void RunSearch()
+        {
+            string fileContent = string.Empty;
+            for (int i = 0; i < _fileContents.Length; i++)
+            {
+                int fileOcurrences = 0;
+                int a = 0;
+
+                fileContent = new string(_fileContents[i]);
+
+                while ((a = fileContent.IndexOf(SearchWord, a)) != -1)
+                {
+                    a += SearchWord.Length;
+                    fileOcurrences++;
+                }
+                _ocurrencesInFiles[i] = new Tuple<string, int>(FileManagement.FilesNames[i], fileOcurrences);
+            }
         }
 
         public string GetSpecificFileContent(int fileIndex)
@@ -32,9 +51,13 @@ namespace TextSearchEngine
             return fileContent;
         }
 
-        private void RunSearch()
+        private void PrepareSearchDataSource()
         {
+            FileManagement.ObtainNumFilesAndFileNames(EvaluatedDirectory);
+            _ocurrencesInFiles = new Tuple<string, int>[FileManagement.NumFiles];
+            _fileContents = new char[FileManagement.NumFiles][];
 
+            FileManagement.StoreContentIntoCharArray(EvaluatedDirectory, ref _fileContents);
         }
 
         private void SortOcurrencesResults()
