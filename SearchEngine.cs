@@ -10,7 +10,7 @@ namespace TextSearchEngine
 
         public void InitializeSearchEngine(string searchWord)
         {
-
+            SearchWord = searchWord;
         }
 
         private void RunSearch()
