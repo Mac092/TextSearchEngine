@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class SearchEngine
+namespace TextSearchEngine
 {
-    private string _searchWord;
-    private List<Tuple<string, int>> _ocurrencesInFiles;
-
-    private void InitializeSearchEngine()
+    public class SearchEngine
     {
+        public string SearchWord { get; private set; }
+        private List<Tuple<string, int>> _ocurrencesInFiles;
 
+        public void InitializeSearchEngine(string searchWord)
+        {
+
+        }
+
+        private void RunSearch()
+        {
+
+        }
+
+        private void SortOcurrencesResults()
+        {
+
+        }
     }
 
-    private void RunSearch()
-    {
-
-    }
-
-    private void SortOcurrencesResults()
-    {
-
-    }
 }
