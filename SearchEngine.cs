@@ -6,11 +6,19 @@ namespace TextSearchEngine
     public class SearchEngine
     {
         public string SearchWord { get; private set; }
-        private List<Tuple<string, int>> _ocurrencesInFiles;
+        public FileManagement FileManagement { get; private set; }
+        public string EvaluatedDirectory { get; private set; }
 
-        public void InitializeSearchEngine(string searchWord)
+        private Tuple<string, int>[] _ocurrencesInFiles;
+
+        public void InitializeSearchEngine(string searchWord, string searchDirectory)
         {
+            FileManagement = new FileManagement();
             SearchWord = searchWord;
+            EvaluatedDirectory = searchDirectory;
+
+            FileManagement.ObtainNumFilesAndFileNames(EvaluatedDirectory);
+            _ocurrencesInFiles = new Tuple<string, int>[FileManagement.NumFiles];
         }
 
         private void RunSearch()

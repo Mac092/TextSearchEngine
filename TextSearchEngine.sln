@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSearchEngine", "TextSearchEngine.csproj", "{473AD66A-7D4E-430C-B8DB-2F1DAE9D3660}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationTest", "..\ApplicationTest\ApplicationTest.csproj", "{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSearchEngineTest", "TextSearchEngineTest\TextSearchEngineTest.csproj", "{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +21,14 @@ Global
 		{473AD66A-7D4E-430C-B8DB-2F1DAE9D3660}.Release|Any CPU.ActiveCfg = Release|x86
 		{473AD66A-7D4E-430C-B8DB-2F1DAE9D3660}.Release|x86.ActiveCfg = Release|x86
 		{473AD66A-7D4E-430C-B8DB-2F1DAE9D3660}.Release|x86.Build.0 = Release|x86
-		{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}.Debug|x86.Build.0 = Debug|Any CPU
-		{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}.Release|x86.ActiveCfg = Release|Any CPU
-		{C7B2BECC-5EFD-4A7B-B8F4-5A275F689288}.Release|x86.Build.0 = Release|Any CPU
+		{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}.Debug|x86.Build.0 = Debug|Any CPU
+		{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}.Release|x86.ActiveCfg = Release|Any CPU
+		{3EF1336A-F6BC-4814-A48A-2C8CC8000BAB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
