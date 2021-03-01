@@ -15,12 +15,12 @@ Project comes with an example folder containing several files that can be used a
 
 
 1. Execute TextSearchEngine.exe
-2. Change directory global variables values on SearchEngineTest.cs for the ones that match your current resources folder structure
 2. Follow the instructions displayed on the console and write both the target directory path and any word/words you want to search for.
 
 
 #Run Unit tests
 
 1. Open TextSearchEngine.sln with VisualStudio
-2. Open the test explorer windows
-3. Select "Run All"
+2. Change directory global variables values on SearchEngineTest.cs for the ones that match your current resources folder structure
+3. Open the test explorer windows
+4. Select "Run All"
