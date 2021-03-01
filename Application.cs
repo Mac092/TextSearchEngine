@@ -13,11 +13,14 @@ namespace TextSearchEngine
             _searchEngine = new SearchEngine();
 
             string searchWord = _userInteraction.AskForSearch();
-            //Build
-            //_searchEngine.InitializeSearchEngine(searchWord, args[0]);
-            //Debugging
-            _searchEngine.InitializeSearchEngine(searchWord, "C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\DirectoryWithContent");
+            string directoryPath = _userInteraction.AskForDirectoryPath();
+
+            _searchEngine.InitializeSearchEngine(searchWord, directoryPath);
+            _userInteraction.ShowMessage(_searchEngine.FileManagement.NumFiles + " files read in directory: " + directoryPath);
+
             _searchEngine.RunSearch();
+
+            _userInteraction.ShowSearchResults(_searchEngine.GetOcurrencesInFiles());
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace TextSearchEngine.Tests
 {
@@ -34,7 +35,7 @@ namespace TextSearchEngine.Tests
         public void TestDirectoryContainingFiles()
         {
             string searchWord = "dog";
-            string searchDirectory = "C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\DirectoryWithContent";
+            string searchDirectory = "C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\DirectoryWithCoupleFiles";
             string[] filesNames = new string[2] { "File1.txt", "File2.txt" };
 
             SearchEngine searchEngine = new SearchEngine();
@@ -66,7 +67,24 @@ namespace TextSearchEngine.Tests
             searchEngine.InitializeSearchEngine(searchWord, searchDirectory);
             searchEngine.RunSearch();
 
-            Assert.AreEqual(2, searchEngine.GetOcurrencesInFiles()[0].Item2);
+            Assert.AreEqual(8, searchEngine.GetOcurrencesInFiles()[0].Item2);
+        }
+
+        [Test]
+        public void TestSortedOccurrences()
+        {
+            string searchWord = "dog";
+            string searchDirectory = "C:\\Users\\Usuario\\Desktop\\FilesTextSearchEngine\\DirectoryWithContent";
+            Tuple<string, int>[] testOccurrences = new Tuple<string, int>[3];
+            testOccurrences[0] = new Tuple<string, int>("File4.txt", 8);
+            testOccurrences[1] = new Tuple<string, int>("File3.txt", 5);
+            testOccurrences[2] = new Tuple<string, int>("File1.txt", 2);
+
+            SearchEngine searchEngine = new SearchEngine();
+            searchEngine.InitializeSearchEngine(searchWord, searchDirectory);
+            searchEngine.RunSearch();
+
+            Assert.AreEqual(testOccurrences, searchEngine.GetOcurrencesInFiles());
         }
     }
 }
